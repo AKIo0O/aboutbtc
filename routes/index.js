@@ -278,7 +278,7 @@ index.post("/uploadfile", function*(){
         var subfix = base64.indexOf("data:image/png") == 0 ? ".png" : ".jpg";
         var index  = subfix == ".png" ? 22 : 23;
 
-        fs.writeFileSync("public/upload/"+id+".png", new Buffer(base64.slice(index), 'base64'));
+        fs.writeFileSync("public/assets/"+id+".png", new Buffer(base64.slice(index), 'base64'));
     }
 
     this.body = {status: 0, id: id + ".png"};

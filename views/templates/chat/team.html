@@ -65,7 +65,7 @@
         <div class="memeber" ng-repeat="t in users">
             <div class="p">
                 <div class="header">
-                    <img src="/upload/{{t._id}}.png" onerror="this.src='/assets/profile_blank_thumb.gif'" width="32" height="32">
+                    <img src="/assets/{{t._id}}.png" onerror="this.src='/assets/profile_blank_thumb.gif'" width="32" height="32">
                 </div>
                 <div class="name line" ng-if="t.active != '0'">{{t.name}}</div>
                 <div class="name line" ng-if="t.active == '0'">未激活</div>

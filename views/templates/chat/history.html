@@ -1,7 +1,7 @@
 <div class="subtickets" ng-controller="historyController">
     <div class="message" ng-repeat="t in subtickets">
         <div class="header">
-            <img src="/upload/{{userinfo._id}}.png" onerror="this.src='/assets/profile_blank_thumb.gif'" width="36" height="36" alt="">
+            <img src="/assets/{{userinfo._id}}.png" onerror="this.src='/assets/profile_blank_thumb.gif'" width="36" height="36" alt="">
             <span class="name">{{t.author}}</span>
             <span class="time">{{t.time}}</span>
         </div>
@@ -13,7 +13,7 @@
 <textarea name="" id="template" cols="30" rows="10" hidden>
     <div class="message">
         <div class="header">
-            <img src="/upload/#{_id}.png" onerror="this.src='/assets/profile_blank_thumb.gif'"  width="36" height="36" alt="">
+            <img src="/assets/#{_id}.png" onerror="this.src='/assets/profile_blank_thumb.gif'"  width="36" height="36" alt="">
             <span class="name">#{author}</span>
             <span class="time">#{time}</span>
         </div>

@@ -62,7 +62,7 @@ require("./routes/helper/socket");
 
 app.use(function*(){
 
-    var html = "./views/start.html";
+    var html = "";
 
     if(this.path.indexOf("/user") == 0 && this.path.indexOf(".html") < 0){
 
@@ -73,12 +73,12 @@ app.use(function*(){
 
         html = this.path.length >0 ? "./views/templates/chat.html" : "./views/templates"+this.path+".html";
 
-        if(this.session.user && this.session.user.email == "tangxm90@gmail.com" && this.path.length >0){
+        if(this.session.user && this.session.user.email == "tangxm90@gmail.com" && this.path.indexOf(".html") < 0){
             html = "./views/templates/adminchat.html";
         }
     }
 
-    this.body = require("fs").readFileSync(html).toString().replace("#crsftoken#", this.csrf);;
+    if(html.length) this.body = require("fs").readFileSync(html).toString().replace("#crsftoken#", this.csrf);;
 });
 
 

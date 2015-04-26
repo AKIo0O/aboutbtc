@@ -80,7 +80,7 @@ angular.module("cocos.index").controller('chatHistory', function($scope, $http, 
                 var sub = {};
 
                 sub.parent = currentid;
-                sub.content = "![图片](/upload/"+data.id+")";
+                sub.content = "![图片](/assets/"+data.id+")";
                 sub.author = $scope.userinfo.name;
                 sub.userid = $scope.userinfo._id;
                 socket.emit("message", sub);

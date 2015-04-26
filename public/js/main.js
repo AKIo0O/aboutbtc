@@ -637,7 +637,7 @@ angular.module("cocos.index").controller('chatHistory', function($scope, $http, 
                 var sub = {};
 
                 sub.parent = currentid;
-                sub.content = "![图片](/upload/"+data.id+")";
+                sub.content = "![图片](/assets/"+data.id+")";
                 sub.author = $scope.userinfo.name;
                 sub.userid = $scope.userinfo._id;
                 socket.emit("message", sub);
@@ -906,7 +906,7 @@ cocos.factory('userinfo',function($resource){
 
 cocos.factory('socket',function($resource){
 
-    var socket = io.connect("http://"+location.hostname+":8000",{transports: ['websocket', 'polling', 'flashsocket']});
+    var socket = io.connect("http://www.aboutbtc.me:8900",{transports: ['websocket']});
 
     socket.emit("connected");
     return socket;
@@ -949,50 +949,50 @@ cocos.config(function($routeProvider){
 
         when('/chat/room/:id', {
             templateUrl: '/templates/chat/chathistory.html',
-            title: 'Cocos企业会员'
+            title: 'About BTC'
         }).
 
         when('/chat/home', {
             templateUrl: '/templates/chat/home.html',
-            title: 'Cocos企业会员'
+            title: 'About BTC'
         }).
 
         when('/chat/team', {
             templateUrl: '/templates/chat/team.html',
-            title: 'Cocos企业会员'
+            title: 'About BTC'
         }).
 
         when('/chat/qa', {
             templateUrl: '/templates/chat/qa.html',
-            title: 'Cocos企业会员'
+            title: 'About BTC'
         }).
 
         // when('/chat/', {
         //     templateUrl: '/templates/chat/.html',
-        //     title: 'Cocos企业会员'
+        //     title: 'About BTC'
         // }).
 
         when('/register', {
             templateUrl: '/templates/register.html',
-            title: 'Cocos企业会员'
+            title: 'About BTC'
         }).
         
 
         when('/', {
             templateUrl: '/templates/intro.html',
-            title: 'Cocos企业会员介绍'
+            title: 'About BTC介绍'
         }).
         when('/pay', {
             templateUrl: '/templates/pay.html',
-            title: 'Cocos企业会员'
+            title: 'About BTC'
         }).
         when('/getstarted', {
             templateUrl: '/templates/getstarted/userinfo.html',
-            title: 'Cocos企业会员'
+            title: 'About BTC'
         }).
         when('/inituser', {
             templateUrl: '/templates/getstarted/teaminfo.html',
-            title: 'Cocos企业会员'
+            title: 'About BTC'
         }).
         when('/allticket', {
             templateUrl: '/templates/tickets.html',

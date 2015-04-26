@@ -9,7 +9,7 @@ cocos.factory('userinfo',function($resource){
 
 cocos.factory('socket',function($resource){
 
-    var socket = io.connect("http://"+location.hostname+":8000",{transports: ['websocket', 'polling', 'flashsocket']});
+    var socket = io.connect("http://www.aboutbtc.me:8900",{transports: ['websocket']});
 
     socket.emit("connected");
     return socket;

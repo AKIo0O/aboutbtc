@@ -3,7 +3,7 @@
         <div class="profile {{slidedown}}">
             <div class="header_view"  ng-click="slidedown=(slidedown == 'slidedown')?'slideup':'slidedown'">
                 <div class="view_avatar">
-                    <img src="/upload/{{userinfo._id}}.png" onerror="this.src='/assets/profile_blank_thumb.gif'" width="32" height="32" alt="">
+                    <img src="/assets/{{userinfo._id}}.png" onerror="this.src='/assets/profile_blank_thumb.gif'" width="32" height="32" alt="">
                 </div>
                 <div class="view_name">{{userinfo.name}}</div>
                 <div class="view_state">
