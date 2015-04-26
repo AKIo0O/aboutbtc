@@ -1,0 +1,80 @@
+<html ng-app="cocos" ng-cloak>
+
+<head>
+    <title>About BTC</title>
+    <meta charset="utf-8">
+   
+    <link rel="stylesheet" href="/css/application.css">
+</head>
+
+<body>
+    <input type="hidden" id="token" value="#crsftoken#">
+    <style>
+        #content .logo{
+            font-size: 30px;
+            width: 400px;
+            color: #fff;
+        }
+    </style>
+
+    <div class="enter auth" id="content"  ng-controller="signupController">
+        <header>
+            <a class="logo" href="/">About BTC</a>
+            <h5>离大家只有一步之遥</h5></header>
+        <main id="users-new">
+            <form accept-charset="UTF-8" class="auth-form" method="post">
+                <fieldset>
+                    <label for="account_name" hidden>公司名字</label>
+                    <input autofocus="autofocus" hidden value="aboutbtc" id="account_name" ng-model="company" name="account[name]" type="text">
+                    <label for="user_name">昵称</label>
+                    <input id="user_name" name="user[name]" ng-model="name" type="text">
+                    <label for="user_email">邮箱地址</label>
+                    <input id="user_email" name="user[email]" ng-model="email" type="email">
+                    <label for="user_password">密码</label>
+                    <input id="user_password" name="user[password]" ng-model="password" type="password">
+                    <input data-timezone-input="true" id="user_time_zone_name" name="user[time_zone_name]" type="hidden" value="UTC">
+                    <input name="commit" type="submit" ng-click="submit()" value="创建账号">
+                </fieldset>
+            </form>
+            <aside>
+                <div id="testimonial">
+                    <h5 class="quote">"我们是一帮有爱的新青年。"</h5>
+                    <div class="name">AKI</div>
+                    <div class="title">站长, 2015年4月24日</div>
+                </div>
+                <div id="customers">
+                    <p>做最有爱的Bitcoin社区.</p></div>
+            </aside>
+        </main>
+        <footer><span>已经有账号? <a href="/user/signin">登录</a></span></footer>
+    </div>
+    <script src="/js/angular.js"></script>
+    <script>
+
+    var csrfconfig = {headers:{"X-Csrf-Token": document.getElementById("token").value}};
+
+    angular.module("cocos",[]).controller("signupController",function($scope, $http){
+
+        
+        $scope.submit = function(){
+            var data = {email: $scope.email, password: $scope.password};
+
+            data.name = $scope.name;
+            data.company  = $scope.company;
+
+            $http.post("/user/sign_up", data, csrfconfig).success(function(data){
+                
+                if(data.status == 1){
+                    alert(data.msg);
+                }else{
+                    alert("已经发送邮件到您的邮箱，请登录激活");
+                }
+
+            });
+        };
+
+
+    });
+    </script>
+
+</body>

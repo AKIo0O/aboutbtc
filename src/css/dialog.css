@@ -1,0 +1,31 @@
+
+
+
+.mask{
+    /*display: none;*/
+    background: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.dialog{
+    -webkit-border-radius: 3px;
+    -webkit-box-orient: vertical;
+    -webkit-transition: 200ms -webkit-transform;
+    background: white;
+    box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0,0,0,0.15);
+    color: #333;
+    display: -webkit-box;
+    
+    padding: 0;
+    position: relative;
+    z-index: 101;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+

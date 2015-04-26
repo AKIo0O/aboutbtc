@@ -1,0 +1,43 @@
+{
+  "name": "Banana-fe",
+  "version": "0.0.1",
+  "description": "Banana-fe",
+  "keywords": [
+    "wallet"
+  ],
+  "homepage": "https://bitbucket.org/akio0o/Banana-fe",
+  "bugs": {
+    "url": "https://bitbucket.org/akio0o/Banana-fe/issues"
+  },
+  "author": "AKI",
+  "contributors": [],
+  "main": "start.js",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/akio0o/Banana-fe.git"
+  },
+  "dependencies": {
+    "async": "*",
+    "dateformat": "*",
+    "colors": "*",
+    "koa": "*",
+    "koa-static": "*",
+    "koa-session": "*",
+    "koa-mount": "*",
+    "koa-router": "*",
+    "otplib": "*",
+    "kmodel": "*"
+  },
+
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-css": "*"
+  },
+  
+  "engines": {
+    "node": ">=0.12"
+  }
+}

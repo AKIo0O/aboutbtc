@@ -1,0 +1,41 @@
+<html ng-app="cocos" ng-cloak>
+
+<head>
+    <title>Cocos 企业会员</title>
+    <meta charset="utf-8">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?2cf7b32774dd94da74f3187ac6dc1d18";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <!-- <link href="http://cloud.typography.com/7482872/760906/css/fonts.css" media="screen" rel="stylesheet"> -->
+    <!-- <link href="https://dbd6j53uzcole.cloudfront.net/assets/home.6c5b036b.css" media="all" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://dbd6j53uzcole.cloudfront.net/fonts/281302/60263503019D8EE8E.css"> -->
+    <link rel="stylesheet" href="/css/application.css">
+</head>
+
+<body>
+    <input type="hidden" id="token" value="#crsftoken#">
+    <div class="enter log-in" id="content">
+        <header>
+            <a class="logo" href="/"><img alt="Logo mark.0b14965b" src="https://dbd6j53uzcole.cloudfront.net/assets/images/website/logo-mark.0b14965b.png"></a>
+            <h2>重置密码</h2>
+            <h6>请输入您的注册密码</h6></header>
+        <main id="forgot-password">
+            <form accept-charset="UTF-8" action="/user/password" class="new_user" id="new_user" method="post">
+                <div style="display:none">
+                    <input name="utf8" type="hidden" value="✓">
+                    <input name="authenticity_token" type="hidden" value="8hPmtpnpVG1JW82KN6HT+YGdhtBJiZIlCOGnBGA6KKg=">
+                </div>
+                <fieldset>
+                    <input autofocus="autofocus" id="user_email" name="user[email]" placeholder="邮箱" type="email">
+                    <input name="commit" type="submit" value="下一步">
+                </fieldset>
+            </form>
+        </main>
+    </div>
+</body>

@@ -1,0 +1,25 @@
+<html ng-app="cocos" ng-cloak>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/aboutbtc.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/markdown.css">
+    <link rel="stylesheet" type="text/css" href="/css/chat.css">
+</head>
+<body>
+    <input type="hidden" id="token" value="#crsftoken#">
+    <div class="line" id="progress" ng-progress="asd" style="width:{{start}}px"></div>
+    <div >
+        <ng-include src="'/templates/chat/leftpaneladmin.html'"></ng-include>
+    </div>
+    <div class="rightpanel" ng-view>
+    </div>
+    <img src="" alt="" class="previewfile" hidden>
+    <canvas id="canvas" hidden></canvas>   
+    <script type="text/javascript" src="/js/angular.js"></script>
+    <script type="text/javascript" src="/js/jq.js"></script>
+    <script type="text/javascript" src="/js/socket.io.js"></script>
+    <script type="text/javascript" src="/js/main.min.js"></script>
+</body>
+</html>

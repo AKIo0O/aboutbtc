@@ -1,0 +1,86 @@
+
+<style>
+    .wrap.ticket{
+        margin-top: 40px;
+        border:1px solid #eee;
+        padding: 20px 2em;
+        margin-bottom: 90px;
+    }
+
+    .memeber {
+        height: 70px;
+        border:1px solid #eee;
+        margin-top: 8px;
+        padding: 10px;
+    }
+    .memebers .name{
+        width: 100px;
+    }
+    .memebers .line{
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 20px;
+        float: left;
+    }
+    .memebers .header{
+        float: left;
+    }
+    .memebers .action{
+        float: right;
+
+    }
+    .memebers .action a{
+        color: #049cdb;
+        margin-right: 10px;
+    }
+
+    .memebers h4{
+        margin: 10px 0;
+    }
+    p{
+        margin: 5px 0;
+        line-height: 20px;
+    }
+    .invite .text{
+        width: 300px;
+    }
+    .invite .btn{
+        line-height: 35px;
+        height: 35px;
+    }
+</style>
+
+<div class="wrap ticket" ng-controller="teamController">
+    
+    <h3>Team Memebers</h3>
+    <p>邀请新的成员。</p>
+    
+    <div class="memebers">
+        <h4>全体成员({{users.length}})</h4>
+        <div class="invite">
+            <input type="text" class="text" ng-model="inviteemail" placeholder="邮箱地址">
+            <a href="#" class="btn" ng-click="invite()">邀请</a>
+        </div>
+        <div class="memeber" ng-repeat="t in users">
+            <div class="p">
+                <div class="header">
+                    <img src="/upload/{{t._id}}.png" onerror="this.src='/assets/profile_blank_thumb.gif'" width="32" height="32">
+                </div>
+                <div class="name line" ng-if="t.active != '0'">{{t.name}}</div>
+                <div class="name line" ng-if="t.active == '0'">未激活</div>
+                <div class="email line">{{t.email}}</div>
+                <div class="action line" ng-if="t.active != '0'">
+                    <!-- <a href="#" class="disable" ng-click="disable" ng-if="user.type == 'admin' && user.name != t.name">禁用账户</a> -->
+                </div>
+                <div class="action line" ng-if="user.name == t.name">
+                    管理员
+                </div>
+                <div class="action line" ng-if="t.active == '0'">
+                    <a href="#" class="disable">再次邀请</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

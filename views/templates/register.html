@@ -1,0 +1,113 @@
+
+
+<style>
+    .indexpage{
+        background: url(http://cc.cocimg.com/devcon/2015/img/page1-retina.png);
+        height: 100%;
+        background-position: center;
+    }
+
+    .indexpage .form{
+
+        width: 300px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -150px;
+        text-align: center;
+    }
+
+    .indexpage .text{
+        width: 300px;
+        margin: 5px;
+        border:1px solid #fff;
+        /*background: transparent;*/
+    }
+
+    .indexpage .start .btn{
+        
+        line-height: 30px;
+        background: #fff;
+        margin: 0 auto;
+        color: #333;
+        border:1px solid #fff;
+        margin-top: 20px;
+    }
+
+    .indexpage h2,.indexpage h3{
+        color: #fff;
+        text-align: center;
+        font-size: 30px;
+        padding: 30px;
+        margin: 0;
+    }
+    .indexpage h3{
+        padding: 10px;
+        font-size: 14px;
+        color:#fff;
+    }
+
+    .indexpage .form{
+        color: #fff;
+        line-height: 30px;
+    }
+    
+    .success.form{
+        font-size: 14px;
+        border:1px solid #fff;
+        background: #fff;
+        color: #333;
+        width: 500px;
+        height: 270px;
+        margin-top: -150px;
+        margin-left: -250px;
+        box-shadow: 0 0 5px #fff;
+    }
+
+    .success.form h3{
+        color: #36a64f;
+        font-size: 30px;
+        margin: 20px 0;
+    }
+
+    .success.form p{
+        margin: 5px;
+        line-height: 20px;
+        font-size: 20px;
+    }
+
+    .success.form p.email{
+        margin: 0 auto;
+        margin-top: 30px;
+        font-size: 12px;
+        border-bottom: 2px dashed #D9D9D9;
+        width: 270px;
+        padding-bottom: 10px;
+    }
+
+
+
+</style>
+
+<div class="indexpage" ng-controller="indexpageController">
+    
+    <div class="w" ng-show="register">
+        <h2>Cocos官方线上支持</h2>
+        <h3>释放您的游戏想象力</h3>
+        <div class="form start">
+            <input type="text" class="text" ng-model="email" placeholder="邮箱地址">
+            <input type="text" class="text" ng-model="company" placeholder="公司名字">
+            <div class="btn" ng-click="submit()">开始</div>
+        </div>
+    </div>
+    <div ng-show="!register">
+        <div class="form success">
+            <h3>恭喜，您已经注册成功</h3>
+            <p>现在请检查您的邮箱。</p>
+            <p class="email">{{email}}</p>
+            <a class="btn" target="_blank" href="http://mail.{{email.slice(email.indexOf('@')+1)}}" style="margin-top:20px;">登录邮箱</a>
+        </div>  
+    </div>
+</div>

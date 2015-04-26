@@ -1,0 +1,75 @@
+
+<style>
+    
+    .profilex{
+        text-align: left;
+        
+        padding: 40px;
+    }
+    .profilex .centerbox{
+        border: 1px solid #eee;
+        /*height: 100%;*/
+        width: 500px;
+    }
+    .profilex .item{
+        line-height: 40px;
+        border-bottom:1px solid #eee;
+
+    }
+    .profilex .item label{
+        min-width: 150px;
+        display: inline-block;
+        text-align: right;
+    }
+    .profilex .item .right{
+        display: inline-block;
+        padding-left: 20px;
+    }
+    .profilex .w{
+        border:1px solid #eee;
+        display: inline-block;
+        min-width: 300px;
+    }
+    .profilex .title{
+        text-align: center;
+    }
+    .profilex .btn{
+        margin:  5px auto;
+        display: block;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .profilex .text{
+        width: 200px;
+        height: 25px;
+    }
+</style>
+
+<div ng-controller="homeController" class="profilex">
+    <div class="">
+        <div class="w">
+            <div class="item title">
+                个人资料
+            </div>
+            <div class="item">
+                <label>邮箱: </label>
+                <div class="right">{{user.email}}</div>
+            </div>
+            <!-- <div class="item"> -->
+                <!-- <label>公司: </label> -->
+                <!-- <div class="right">{{user.company}}</div> -->
+            <!-- </div> -->
+            <div class="item">
+                <label>名字: </label>
+                <div class="right"><input class="text" type="text" ng-model="user.name"></div>
+            </div>
+            <div class="item">
+                <label>修改头像:</label>
+                <div class="right"> <input type="file" id="uploadfile" ></div>
+            </div>
+            <div class="btn" ng-click="post()">提交</div>
+        </div>
+    </div>
+</div>
+

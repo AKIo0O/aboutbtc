@@ -1,0 +1,107 @@
+
+
+<style>
+
+    .order{
+        padding-top: 40px;
+    }
+    
+    .order .leftpanel{
+        border:1px solid #eee;
+        width: 100%;
+        min-height: 500px;
+        box-shadow: 0 0 4px #eee;
+        margin-bottom: 20px;
+        padding: 20px;
+        position: relative;
+
+    }
+
+    .order .tabs{
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        padding: 10px;
+    }
+    .order .tabs a{
+        /*background: #eee;*/
+        padding: 6px 10px;
+        color: #80bd01;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .order .tabs a.current{
+        background: #80bd01;
+        color: #fff;
+    }
+
+    .order .tabs .new{
+        background: #80bd01;
+        color: #fff;
+        float: right;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        margin-top: 5px;
+        margin-right: 5px;
+        border-radius: 3px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .items {
+        line-height: 40px;
+    }
+
+    .items .item{
+        border-bottom: 1px solid #eee;
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .items .item:hover{
+        background: #eee;
+    }
+
+    .items a{
+        margin-left: 10px;
+    }
+
+    .items .title{
+        display: inline-block;
+        width: 600px;
+    }
+
+    .items .time,.items .name{
+        float: right;
+        margin-right: 10px;
+    }
+
+</style>
+
+<div class="wrap order" ng-controller="ticketsController">
+
+    <div class="leftpanel">
+        <ng-include src="'./templates/fraguments/nav.html'"></ng-include>
+        <div class="tabs">
+            <!-- <a href="#" ng-click="tab('all')" class="all {{all}}">所有</a> -->
+            <!-- <a href="#" ng-click="tab('pending')" class="pending {{pending}}">团队处理中</a>
+            <a href="#" ng-click="tab('cocos')" class="cocos {{cocos}}">官方处理中</a>
+            < a href="#" ng-click="tab('end')" class="end {{end}}">已结束</a>-->
+            <a href="/new" class="new">新建工单</a>
+        </div>
+        <div class="items">
+            <div class="item" ng-repeat="t in tickets">
+                <a href="/ticket/{{t._id}}" class="title">【{{type[t.type]}}】{{t.title}}</a>
+                <span class="time">{{t.time}}</span>
+                <a href="#" class="name">{{t.author}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="rightpanel">
+    </div>
+
+</div>

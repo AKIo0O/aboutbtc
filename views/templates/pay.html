@@ -1,0 +1,63 @@
+
+<style>
+    .index table{
+        width: 800px;
+        height: 500px;
+        border: 1px solid #80bd01;
+    }
+
+    .index table td{
+        border: 1px solid #80bd01;
+    }
+
+</style>
+<div class="wrap index" ng-controller="indexRouteController">
+    
+    
+    <table>
+        <tr>
+            <td>服务明细</td>
+            <td>标准技术支持</td>
+            <td>高级技术支持</td>
+        </tr>
+        <tr>
+            <td>线上支持小时数</td>
+            <td>96</td>
+            <td>540</td>
+        </tr>
+        
+        <tr>
+            <td>坐席数</td>
+            <td>1</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>响应时间</td>
+            <td>2天内</td>
+            <td>4小时</td>
+        </tr>
+        <tr>
+            <td>年费金额</td>
+            <td>20000/年</td>
+            <td>100000/年</td>
+        </tr>
+        <tr>
+            <td>选择</td>
+            <td><input type="radio" ng-model="type" value="normal" name="type"></td>
+            <td><input type="radio" ng-model="type" value="pro" name="type"></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <a class="btn" ng-click="showdialog()" href="/mpay?type={{type}}" target="_blank">购买</a>
+            </td>
+            
+        </tr>
+    </table>
+    <div class="mask" ng-show="dialog" ng-click="dialog=false"></div>
+    <div class="dialog paydialog" ng-show="dialog">
+        <h3>购买中</h3>
+        <div class="btn">购买失败</div>
+        <div class="btn">已付款</div>
+    </div>
+</div>
+

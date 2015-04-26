@@ -1,0 +1,36 @@
+<div ng-controller="chatController">
+    <div class="leftpanel">
+        <div class="profile {{slidedown}}">
+            <div class="header_view"  ng-click="slidedown=(slidedown == 'slidedown')?'slideup':'slidedown'">
+                <div class="view_avatar">
+                    <img src="/upload/{{userinfo._id}}.png" onerror="this.src='/assets/profile_blank_thumb.gif'" width="32" height="32" alt="">
+                </div>
+                <div class="view_name">{{userinfo.name}}</div>
+                <div class="view_state">
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="profile_links">
+                <a href="#" ng-click="select('/chat/home')"><i class="fa fa-2 fa-user"></i>个人设置</a>
+                <a href="#" ng-click="select('/chat/team')"><i class="fa fa-2 fa-group"></i>网站成员</a>
+                <!-- <a href="#" ng-click="select('/chat/dashboard')"><i class="fa fa-2 fa-tachometer"></i>Dashboard</a> -->
+                <!-- <a href="#" ng-click="select('/chat/qa')"><i class="fa fa-2 fa-question"></i>Q&A</a> -->
+                <!-- <a href="#" ng-click="select('/chat/pricing')"><i class="fa fa-2 fa-bitcoin"></i>Pricing</a> -->
+                <a href="#" ng-click="select('/chat/logout')"><i class="fa fa-2 fa-sign-out"></i>退出账号</a>
+            </div>
+        </div>
+        <div class="menu-list__item">
+            <div class="menu-list__header">聊天室列表</div>
+            <ul class="room-list">
+                <li class="room-list-item {{t.offical}} {{t.current && 'current'}}" 
+                    ng-repeat="(index,t) in tickets" data-id="{{t._id}}"
+                    ng-click="loading(index,t._id)"
+                    >{{t.title}}</li>
+            </ul>
+        </div>
+       <!--  <div class="menu-actions" ng-click="showdialog()">
+            <a href="#" target="_blank" class="createTicket">创建聊天室</a>
+        </div> -->
+    </div>
+    <ng-include src="'/templates/fraguments/dialog.html'"></ng-include>
+</div>

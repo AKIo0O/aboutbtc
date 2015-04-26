@@ -1,0 +1,90 @@
+<div class="wrapper" ng-controller="chatHistory">
+    <div class="title {{ticket.offical}}">
+        <i class="fa fa-question-circle"></i>{{ticket.title}}
+    </div>
+    <div class="content">
+        <div class="messages">
+            <div class="message">
+                <div class="header">
+                    <img src="/upload/{{ticket.userid}}.png" onerror="this.src='/assets/profile_blank_thumb.gif'"  width="36" height="36" alt="">
+                    <span class="name">{{ticket.author}}</span>
+                    <span class="time">{{ticket.time}}</span>
+                </div>
+                <div class="mcontent">
+                    <pre class="markdown-body">{{ticket.content}}</pre>
+                </div>
+            </div>
+            <div class="subtickets">
+                <div class="message" ng-repeat="t in subtickets">
+                    <div class="header">
+                        <img src="/upload/{{t._id}}.png" onerror="this.src='/assets/profile_blank_thumb.gif'"  width="36" height="36" alt="">
+                        <span class="name {{t.teamname=='2361bdf7c55e26ed9d322476dd0563637f3a401d'?'offical':''}}">{{t.author}}</span>
+                        <span class="time">{{t.time}}</span>
+                    </div>
+                    <div class="mcontent">
+                        <pre class="markdown-body">{{t.content}}</pre>
+                    </div>
+                </div>
+            </div>
+            <textarea name="" id="template" cols="30" rows="10" hidden>
+                <div class="message">
+                    <div class="header">
+                        <img src="/upload/#{_id}.png" onerror="this.src='/assets/profile_blank_thumb.gif'"  width="36" height="36" alt="">
+                        <span class="name #{offical}">#{author}</span>
+                        <span class="time">#{time}</span>
+                    </div>
+                    <div class="mcontent">
+                        <pre class="markdown-body">#{content}</pre>
+                    </div>
+                </div>
+            </textarea>
+        </div>
+    </div>
+    <style>
+        .panel{
+            position: absolute;
+            bottom: 62px;
+            left: 20px;
+            right: 40px;
+            line-height: 30px;
+            border: 1px solid #eee;
+            width: 100px;
+            text-align: center;
+            border-bottom: none;
+            /*display: none;*/
+            background: #fff;
+        }
+        .panel div{
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+
+        .panel div:hover{
+            background: #eee;
+        }
+        .uploadfile{
+            position: relative;
+        }
+        .uploadfile input{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+        }
+
+    </style>
+    <div class="panel" ng-show="panelshow">
+        <div class="uploadfile" ng-click="">上传文件
+            <input type="file">
+        </div>
+    </div>
+    <div class="messages-input-container">
+        <a href="#" class="file_upload_btn" ng-click="panelshow=!panelshow">
+            <i class="fa fa-arrow-circle-o-up"></i>
+        </a>
+        <textarea name="input" ng-paste="filter($event)" ng-model="inputtext" id="" cols="30" rows="1" ng-keydown="submit($event)">
+        </textarea>
+    </div>
+</div>
